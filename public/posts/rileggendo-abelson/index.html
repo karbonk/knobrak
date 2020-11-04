@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Rileggendo Abelson | Sjnecura</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Nella rivista Byte dell’agosto 1982(1) Harold Abelson scriveva l’articolo “A Beginner’s Guide to Logo” che mostrava le potenzialità del linguaggio Logo come ambiente di apprendimento.
+Rileggendo l’articolo ho trovato stimolanti e significativi gli esempi che sviluppa Abelson e il presente lavoro cerca di riprodurli utilizzando alcune delle risorse libere che si hanno a disposizione a quasi 40 anni da quell’esperienza.
+Il linguaggio utilizzato nel documento per l&rsquo;etichetta Abelson è Ucblogo perché considerato il più vicino all&rsquo;implementazione usata da Abelson nel proporre i programmi.">
+    <meta name="generator" content="Hugo 0.76.3" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/sjnecura.netlify.app/dist/css/app.4fc0b62e4b82c997bb0041217cd6b979.css" rel="stylesheet">
+    
+
+    
+      <link rel="stylesheet" href="/sjnecura.netlify.app/css/custom.css">
+    
+
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Rileggendo Abelson" />
+<meta property="og:description" content="Nella rivista Byte dell’agosto 1982(1) Harold Abelson scriveva l’articolo “A Beginner’s Guide to Logo” che mostrava le potenzialità del linguaggio Logo come ambiente di apprendimento.
+Rileggendo l’articolo ho trovato stimolanti e significativi gli esempi che sviluppa Abelson e il presente lavoro cerca di riprodurli utilizzando alcune delle risorse libere che si hanno a disposizione a quasi 40 anni da quell’esperienza.
+Il linguaggio utilizzato nel documento per l&rsquo;etichetta Abelson è Ucblogo perché considerato il più vicino all&rsquo;implementazione usata da Abelson nel proporre i programmi." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="sjnecura.netlify.app/posts/rileggendo-abelson/" />
+<meta property="article:published_time" content="2020-10-15T10:46:55+02:00" />
+<meta property="article:modified_time" content="2020-10-15T10:46:55+02:00" />
+<meta itemprop="name" content="Rileggendo Abelson">
+<meta itemprop="description" content="Nella rivista Byte dell’agosto 1982(1) Harold Abelson scriveva l’articolo “A Beginner’s Guide to Logo” che mostrava le potenzialità del linguaggio Logo come ambiente di apprendimento.
+Rileggendo l’articolo ho trovato stimolanti e significativi gli esempi che sviluppa Abelson e il presente lavoro cerca di riprodurli utilizzando alcune delle risorse libere che si hanno a disposizione a quasi 40 anni da quell’esperienza.
+Il linguaggio utilizzato nel documento per l&rsquo;etichetta Abelson è Ucblogo perché considerato il più vicino all&rsquo;implementazione usata da Abelson nel proporre i programmi.">
+<meta itemprop="datePublished" content="2020-10-15T10:46:55+02:00" />
+<meta itemprop="dateModified" content="2020-10-15T10:46:55+02:00" />
+<meta itemprop="wordCount" content="6365">
+
+
+
+<meta itemprop="keywords" content="Linguaggio Logo," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Rileggendo Abelson"/>
+<meta name="twitter:description" content="Nella rivista Byte dell’agosto 1982(1) Harold Abelson scriveva l’articolo “A Beginner’s Guide to Logo” che mostrava le potenzialità del linguaggio Logo come ambiente di apprendimento.
+Rileggendo l’articolo ho trovato stimolanti e significativi gli esempi che sviluppa Abelson e il presente lavoro cerca di riprodurli utilizzando alcune delle risorse libere che si hanno a disposizione a quasi 40 anni da quell’esperienza.
+Il linguaggio utilizzato nel documento per l&rsquo;etichetta Abelson è Ucblogo perché considerato il più vicino all&rsquo;implementazione usata da Abelson nel proporre i programmi."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  
+  
+  <header class="cover bg-top" style="background-image: url('sjnecura.netlify.app/images/1982_08_BYTE_07-08_Logo_0000.jpg');">
+    <div class="pb3-m pb6-l bg-black-60">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="sjnecura.netlify.app/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Sjnecura
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="sjnecura.netlify.app/posts/" title="Posts page">
+              Posts
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+
+<a href="https://github.com/karbonk" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv6 ph3 ph4-ns">
+        
+          <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">Rileggendo Abelson</h1>
+          
+        
+      </div>
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=sjnecura.netlify.app/sjnecura.netlify.app/posts/rileggendo-abelson/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=sjnecura.netlify.app/sjnecura.netlify.app/posts/rileggendo-abelson/&amp;text=Rileggendo%20Abelson" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=sjnecura.netlify.app/sjnecura.netlify.app/posts/rileggendo-abelson/&amp;title=Rileggendo%20Abelson" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Rileggendo Abelson</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2020-10-15T10:46:55+02:00">October 15, 2020</time>
+
+      
+      
+        <span class="f6 mv4 dib tracked"> - 30 minutes read</span>
+        <span class="f6 mv4 dib tracked"> - 6365 words</span>
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>Nella rivista Byte dell’agosto 1982<strong><sup>(1)</sup></strong> Harold Abelson scriveva l’articolo “A Beginner’s Guide to Logo” che mostrava le potenzialità del linguaggio Logo come ambiente di apprendimento.<br />
+Rileggendo l’articolo ho trovato stimolanti e significativi gli esempi che sviluppa Abelson e il presente lavoro cerca di riprodurli utilizzando alcune delle risorse libere che si hanno a disposizione a quasi 40 anni da quell’esperienza.</p>
+<p>Il linguaggio utilizzato nel documento per l&rsquo;etichetta Abelson è Ucblogo perché considerato il più vicino all&rsquo;implementazione usata da Abelson nel proporre i programmi. Ucbologo<strong><sup>(2)</sup></strong> è un programma che ha difficoltà a girare sulle più recenti macchine in Linux e può essere sostituito dai derivati Mswlogo o Fmswlogo, nativi per Windows che però con l&rsquo;emulatore Wine si utilizzano con soddisfazione anche su Linux.</p>
+<p>Librelogo è quello di più facile utilizzo in quanto multipiattaforma e collegato alla suite d&rsquo;ufficio Libreoffice. Esiste una ricca documentazione con varie esperienze didattiche curata da Andreas Formiconi<strong><sup>(3)</sup></strong>.</p>
+<p>Snap!<strong><sup>(4)</sup></strong> (ex BYOB) è un linguaggio di programmazione visuale, drag and drop, reimplementazione estesa di Scratch che permette di costruire propri blocchi. Snap! è sviluppato tra l&rsquo;altro da Brian Harvey l&rsquo;autore di Ucbologo.</p>
+<hr />
+<p class="note">
+<strong><sup>(1)</sup></strong> L'articolo originale è reperibile in <a href="https://archive.org/stream/byte-magazine-1982-08-rescan/1982_08_BYTE_07-08_Logo#page/n89/">Archive.org</a></p>
+<p class="note">
+<strong><sup>(2)</sup></strong> <a href="https://people.eecs.berkeley.edu/~bh/logo.html">UcbLogo</a>, <a href="http://www.softronix.com/logo.html">MswLogo</a> e <a href="http://fmslogo.sourceforge.net/">FmsLogo</a></p>
+<p class="note">
+<strong><sup>(3)</sup></strong> Logo nel <a href="https://iamarf.org/?s=librelogo">blog</a> di Andreas Formiconi</p>
+<p class="note">
+<strong><sup>(4)</sup></strong> Il sito di <a href="https://snap.berkeley.edu/">Snap!</a></p>
+<hr />
+<h2 id="disegnare-con-la-tartaruga">Disegnare con la tartaruga</h2>
+<p>Abelson</p>
+<pre><code>TO SQUARE
+REPEAT 4 [FORWARD 50  RIGHT 90]
+END
+</code></pre><p>LibreLogo<strong><sup>(5)</sup></strong></p>
+<pre><code>TO SQUARE1
+REPEAT 4 [ FORWARD 50  RIGHT 90 ]
+END
+</code></pre><p>Snap!<br />
+<figure class="mw5">
+    <img src="/img/001_snap.png"/> 
+</figure>
+</p>
+<p><code>SQUARE</code> è un esempio di <em>procedura</em> Logo. La prima riga (identificata da <code>TO</code>) specifica il nome della procedura. Questa procedura si chiama <code>SQUARE</code> (dal momento che è quello che disegna), ma si sarebbe potuto chiamare in qualunque modo. Il resto della procedura (corpo della procedura) specifica l&rsquo;elenco delle istruzioni da eseguire in risposta al comando <code>SQUARE</code>; il termine <code>END</code> indica la fine della definizione.</p>
+<hr />
+<p class="note"><strong><sup>(5)</sup></strong> Librelogo ha una primitiva <code>SQUARE</code> che non va usata come procedura definita dall'utente.<br/>
+In Librelogo le parentesi quadre che racchiudono le istruzioni da ripetere devono essere seguite per "[" e precedute per "]" da uno spazio.</p>
+<hr />
+<p>Una volta definito in questo modo, <code>SQUARE</code> diventa parte del vocabolario del computer. Ogni volta che si dà il comando <code>SQUARE</code>, la tartaruga disegna un quadrato.</p>
+<h2 id="procedure-con-input">Procedure con input</h2>
+<p>Esiste un&rsquo;importante differenza tra <code>SQUARE</code> e <code>FORWARD</code>. <code>SQUARE</code> disegna sempre un quadrato di 50 passi per lato. Ma <code>FORWARD</code> è più versatile: richiede un ingresso che determina la distanza che la tartaruga deve percorrere. È possibile modificare la procedura di <code>SQUARE</code> in modo che prenda anche un input che determina la dimensione del quadrato da disegnare. Ad esempio:</p>
+<p>Abelson</p>
+<pre><code>TO SQUARE :SIZE
+REPEAT 4 [FORWARD :SIZE  RIGHT 90]
+END
+</code></pre><p>LibreLogo</p>
+<pre><code>TO SQUARE1 :SIZE
+REPEAT 4 [ FORWARD :SIZE  RIGHT 90 ]
+END
+</code></pre><p>Snap!<br />
+<figure class="mw5">
+    <img src="/img/002_snap.png"/> 
+</figure>
+</p>
+<p>Si usa <code>SQUARE</code> come qualsiasi comando Logo che richiede un input: per disegnare un quadrato con 100 passi di lato, si digita: <code>SQUARE 100</code>; Per disegnare un quadrato con 50 di lato, si digita: <code>SQUARE</code> <code>50</code>.</p>
+<p>La procedura di <code>SQUARE</code> illustra la regola generale per la definizione delle procedure che prevedono input. Si sceglie un nome per l&rsquo;input e lo si include nella riga del titolo della procedura preceduto da due punti. Quindi si utilizza il nome di input (con i due punti) nel corpo della procedura dove è richiesto. Dato che una procedura, una volta definita, diventa un&rsquo;altra parola che il computer &ldquo;conosce&rdquo;, è possibile utilizzare le procedure dichiarate come parte delle definizioni di altre procedure. Ecco una procedura che realizza un disegno andando avanti, ruotando e disegnando ripetutamente un quadrato.</p>
+<p>Abelson</p>
+<pre><code>TO DESIGN
+REPEAT 6 [FORWARD 20 RIGHT 60 SQUARE 75]
+END
+</code></pre><p>LibreLogo</p>
+<pre><code>TO DESIGN
+REPEAT 6 [ FORWARD 20 RIGHT 60 SQUARE1 75 ]
+END
+</code></pre><p>Snap!<br />
+<figure class="mw5">
+    <img src="/img/003_snap.png"/> 
+</figure>
+</p>
+<figure>
+  <img src="/img/003_snap1.png" alt="Cosa disegna la procedura DESIGN">
+  <figcaption>Figura 1 : Un disegno creato da un semplice programma Logo ad una linea che fa ripetere alla tartaruga questi passaggi sei volte: andare avanti di 20 unità, ruotare a destra di 60 gradi e disegnare un quadrato di 75 unità.</figcaption>
+</figure> 
+<h2 id="procedure-ricorsive-semplici">Procedure ricorsive semplici</h2>
+<p>Anche la procedura successiva disegna un quadrato con una dimensione da specificare:</p>
+<p>Abelson</p>
+<pre><code>TO SQ :SIZE
+FORWARD :SIZE
+RIGHT 90
+SQ :SIZE
+END
+</code></pre>    
+<p>LibreLogo</p>
+<pre><code>TO SQ :SIZE
+FORWARD :SIZE
+RIGHT 90
+SQ :SIZE
+END
+</code></pre>    
+<p>Snap!<br />
+<figure class="mw5">
+    <img src="/img/004_snap.png"/> 
+</figure>
+</p>
+<p>Anche se <code>SQ</code> e <code>SQUARE</code> disegnano entrambi quadrati si comportano in modo molto diverso. Invece di disegnare un quadrato e poi fermarsi, <code>SQ</code> fa sì che la tartaruga ripercorra lo stesso percorso più e più volte, o fino a quando non si dice al computer di fermarsi. Ecco perché questo accade. Quando si dà il comando: <code>SQ 100</code> la tartaruga deve eseguire <code>FORWARD 100</code>, <code>RIGHT 90</code>, per poi fare di nuovo <code>SQ 100</code> e così via, per sempre. Aggiungendo un secondo ingresso a <code>SQ</code> si ottiene una procedura chiamata <code>POLY</code>, che ripete più volte la sequenza: andare <code>AVANTI</code> di qualche distanza fissa e girare a <code>DESTRA</code> di qualche angolo fisso. La procedura prende come input la dimensione di ogni passo dal parametro <code>SIZE</code> e la quantità di ogni rotazione dal parametro <code>ANGLE</code>:</p>
+<p>Abelson</p>
+<pre><code>TO POLY :SIZE :ANGLE
+FORWARD :SIZE
+RIGHT :ANGLE
+POLY :SIZE :ANGLE
+END
+</code></pre>
+<p>LibreLogo</p>
+<pre><code>TO POLY :SIZE :ANGLE
+FORWARD :SIZE
+RIGHT :ANGLE
+POLY :SIZE :ANGLE
+END
+</code></pre>    
+<p>Snap!<br />
+<figure class="mw5">
+    <img src="/img/005_snap.png"/> 
+</figure>
+</p>
+<p>Per utilizzare la procedura <code>POLY</code>, digitare la parola <code>POLY</code> seguita da valori specifici per gli ingressi come per esempio  <code>POLY 80 144</code></p>
+<p>La Figura 2 mostra alcune delle tante forme ottenute richiamando <code>POLY</code> con vari input.</p>
+<figure>
+  <img src="/img/005_snap1.png" alt="Figure disegnate dal programma POLY">
+  <figcaption>Figura 2: Queste figure sono tutte disegnate dal programma Logo <code>POLY</code> a tre linee, la tartaruga deve andare <code>AVANTI</code> di una certa quantità, girare a <code>DESTRA</code> di un certo angolo e ripetere questa operazione più e più volte. Le figure disegnate da <code>POLY</code> si chiudono sempre, ma il numero di lati che devono essere disegnati prima della chiusura della figura dipende dall'ingresso <code>ANGLE</code>  della procedura.</figcaption>
+</figure> 
+<p><em>Ricorsione</em> è la parola che descrive la possibilità di utilizzare una procedura come parte della propria definizione. <code>SQ</code> e <code>POLY</code> sono procedure ricorsive di forma molto semplice, che si limitano a ripetere un ciclo immutabile più e più volte. Ma la ricorsione è un&rsquo;idea molto più potente e può essere usata per ottenere effetti molto più complicati. Per fare solo un piccolo passo oltre il tipo puramente ripetitivo di ricorsione, considerare:</p>
+<p>Abelson</p>
+<pre><code>TO POLYSPI :SIZE :ANGLE
+FORWARD :SIZE
+RIGHT :ANGLE
+POLYSPI :SIZE + 3 :ANGLE
+END
+</code></pre>    
+<p>LibreLogo</p>
+<pre><code>TO POLYSPI :SIZE :ANGLE
+FORWARD :SIZE
+RIGHT :ANGLE
+POLYSPI :SIZE + 3 :ANGLE
+END
+</code></pre>    
+<p>Snap!<br />
+<figure class="mw5">
+    <img src="/img/006_snap.png"/> 
+</figure>
+</p>
+<p>Dando il comando <code>POLYSPI 1 120</code> si ottiene questa sequenza di movimenti della tartaruga:</p>
+<blockquote>
+<p>FORWARD 1 RIGHT 120<br />
+FORWARD 4 RIGHT 120<br />
+FORWARD 7 RIGHT 120<br />
+FORWARD 10 RIGHT 120<br />
+&hellip;</p>
+</blockquote>
+<p>che produce una spirale triangolare in cui ciascuno dei lati è tre passi più grande del lato precedente. La Figura 3 mostra alcune delle forme generate dalla procedura <code>POLIPSPI</code>.</p>
+<figure>
+  <img src="/img/006_snap1.png" alt="Disegni della procedura POLYSPY">
+  <figcaption>Figura 3: Figure create con <code>POLYSPI</code>, variante di <code>POLY</code> (vedi figura 2), il programma sfrutta la ricorsione per aumentare il passo di <code>FORWARD</code> della tartaruga ogni volta che la procedura viene chiamata. Il risultato è una spirale poligonale. Come per <code>POLY</code>, variando l'ingresso <code>ANGLE</code> si modifica la simmetria dello schema.</figcaption>
+</figure> 
+<p>Come variante, è possibile sostituire <code>FORWARD</code> in <code>POLYSPI</code> con un comando che disegna un quadrato:</p>
+<p>Abelson</p>
+<pre><code>TO SPINSQUARE :SIZE :ANGLE
+SQUARE :SIZE
+RIGHT :ANGLE
+SPINSQUARE :SIZE+3 :ANGLE
+END
+</code></pre>    
+<p>LibreLogo</p>
+<pre><code>TO SPINSQUARE :SIZE :ANGLE
+SQUARE1 :SIZE
+RIGHT :ANGLE
+SPINSQUARE :SIZE+3 :ANGLE
+END
+</code></pre>    
+<p>Snap!<br />
+<figure class="mw5">
+    <img src="/img/007_snap.png"/> 
+</figure>
+</p>
+<figure>
+  <img src="/img/007_snap1.png" alt="Il disegno della procedura SPISQUARE">
+  <figcaption>Figura 4: <code>SPISQUARE</code> è un semplice programma ricorsivo che disegna un quadrato di una data dimensione, lo ruota, ne aumenta la dimensione e continua il processo.</figcaption>
+</figure> 
+<p>Il risultato dell&rsquo;esecuzione di <code>SPINSQUARE 5 10</code> come mostrato in figura 4 è una sequenza di quadrati di dimensioni crescenti a partire da un quadrato della dimensione di un passo. Ogni quadrato è tre unità più grande della precedente e ruotato di 10 gradi rispetto ad esso. La procedura continua e i quadrati continuano a crescere fino a quando non si dice Logo di smettere.</p>
+<p>È anche possibile modificare la procedura in modo che si arresti quando i quadrati diventano più grandi di una certa dimensione (ad esempio, 100 passi) includendo una regola di arresto:</p>
+<p>Abelson</p>
+<pre><code>TO SPINSQUARE :SIZE :ANGLE
+IF :SIZE > 100 [STOP]
+SQUARE :SIZE
+RIGHT :ANGLE
+SPINSQUARE :SIZE+3 :ANGLE
+END
+</code></pre>
+<p>LibreLogo</p>
+<pre><code>TO SPINSQUARE :SIZE :ANGLE
+IF :SIZE > 100  [ STOP ]
+SQUARE1 :SIZE
+RIGHT :ANGLE
+SPINSQUARE :SIZE+3 :ANGLE
+END
+</code></pre>    
+<p>Snap!<br />
+<figure class="mw5">
+    <img src="/img/008_snap.png"/> 
+</figure>
+</p>
+<p>Parte del potere di ricorsione è il fatto che programmi così semplici possono portare a risultati così diversi.</p>
+<h2 id="un-ambiente-per-esplorare">Un ambiente per esplorare</h2>
+<p>Come si può vedere dagli esempi presentati finora, è molto facile iniziare la programmazione con la grafica della tartaruga. Ciò è in parte dovuto alla grafica della tartaruga. I comandi di base hanno effetti semplici e visibili. Allo stesso tempo, la grafica della tartaruga è un&rsquo;area incredibilmente ricca per l&rsquo;esplorazione in cui anche programmi semplici possono dare risultati inaspettati, spesso belli. La piccola quantità Logo che abbiamo visto finora è sufficiente per supportare settimane di attività in programmazione e matematica, esplorando domande come &ldquo;Come la forma di una figura <code>POLY</code> dipende dall&rsquo;angolo di input &quot; o &ldquo;Perché tanti programmi ripetuti producono disegni simmetrici?&rdquo; o semplicemente la creazione di bellissimi disegni.  Con Andrea diSessa descriviamo alcune delle matematiche che nascono dall&rsquo;indagine di questo approccio computerizzato alla geometria nel libro <em>Turtle Geometry: The Computer as a Medium for Exploring Mathematics</em> (Cambridge, MA: MIT Press, 1981).</p>
+<p>Oltre all&rsquo;ambiente, anche l&rsquo;interazione del sistema svolge un ruolo cruciale. Quando si esplora l&rsquo;uso del Logo, si definiscono continuamente nuove procedure e si modificano quelle vecchie. Un tipico sistema orientato alla compilazione, in cui cambiare una definizione richiede l&rsquo;andare avanti e indietro tra editor separati, compilatori e linking loader, è inappropriato per questo tipo di attività. Gran parte dell&rsquo;impegno profuso nell&rsquo;attuazione del Logo è stato dedicato alla creazione di un ambiente di programmazione che faciliti la definizione e la modifica delle procedure.</p>
+<p>Il successo della geometria della tartaruga è dovuto in gran parte al fatto che nel progettarla non ci si considerava solo come matematici ed educatori che cercavano di inventare un nuovo approccio alla geometria, né come informatici che cercavano di implementare un sistema, ma abbiamo cercato di assumere entrambe le prospettive, adattando continuamente il sistema informatico alla matematica e viceversa.</p>
+<h2 id="output">Output</h2>
+<p>Abbiamo già visto come definire procedure che richiedono input. È anche possibile impostare un valore come uscita di una procedura. Ad esempio, la seguente procedura prende due numeri come input e riporta come output la loro media:</p>
+<p>Abelson</p>
+<pre><code>TO AVERAGE :X :Y
+OUTPUT (:X + :Y) / 2
+END
+</code></pre>    
+<p>LibreLogo</p>
+<pre><code>TO AVERAGE :X :Y
+OUTPUT (:X + :Y) / 2
+END
+</code></pre>    
+<p>Snap!<br />
+<figure class="mw5">
+    <img src="/img/009_snap.png"/> 
+</figure>
+</p>
+<p>Il risultato restituito da <code>AVERAGE</code> può essere esaminato direttamente (con <code>PRINT</code>) o utilizzato a sua volta come input per altre operazioni:</p>
+<p>Abelson</p>
+<blockquote>
+<p>PRINT (AVERAGE 2 3)<br />
+&gt; 2.5<br />
+PRINT (AVERAGE 1 2) + (AVERAGE 3 4)<br />
+&gt; 5<br />
+PRINT (AVERAGE (AVERAGE 1 2) 3)<br />
+&gt; 2.25</p>
+</blockquote>
+<p>LibreLogo</p>
+<blockquote>
+<p>PRINT (AVERAGE 2, 3)<br />
+&gt; 2.5<br />
+PRINT (AVERAGE 1, 2) + (AVERAGE 3, 4)<br />
+&gt; 5.0<br />
+PRINT (AVERAGE (AVERAGE 1, 2), 3)<br />
+&gt; 2.25<br />
+</code></pre></p>
+</blockquote>
+<p>Snap!<br />
+<figure class="mw5">
+    <img src="/img/009_snap1.png"/> 
+</figure>
+</p>
+<p>Si osservi la convenzione Logo di usare le parentesi per raggruppare una procedura con i suoi input. Anche se le parentesi sono quasi sempre opzionali nelle semplici righe Logo, è una buona idea includerle perché rendono le righe più facili da leggere.</p>
+<h2 id="programmare-con-le-procedure">Programmare con le procedure</h2>
+<p>Un programma Logo è in genere strutturato come un insieme di procedure. Queste procedure trasmettono informazioni tra di loro attraverso gli input e gli output. Il vantaggio di questo tipo di organizzazione è che separa il programma in pezzi gestibili, in quanto ogni procedura può essere semplice in sé. Anche in un programma complesso, è insolito avere una singola procedura che è lunga più di poche righe. Inoltre, l&rsquo;editor Logo integrato e il carattere interattivo generale del sistema Logo consentono di definire e testare separatamente le singole procedure.</p>
+<p>Per illustrare l&rsquo;organizzazione delle procedure, progettiamo un gioco semplice che si svolge come segue. Il computer sceglie a caso un &ldquo;punto misterioso&rdquo; sullo schermo e chiede al giocatore di effettuare mosse successive della tartaruga con <code>LEFT</code> e <code>FORWARD</code>. Prima di ogni spostamento, il computer stampa la distanza della tartaruga dal punto misterioso. L&rsquo;obiettivo è quello di portare la tartaruga molto vicino al punto &ldquo;misterioso&rdquo; in meno mosse possibili. Ecco una trascrizione del gioco in azione. Le risposte del computer sono racchiuse tra asterischi per distinguerle da quelle del giocatore:</p>
+<blockquote>
+<p><em>Distance to point is 67.6 turn left how much?</em><br />
+&gt; 0<br />
+<em>Go forward how much?</em><br />
+&gt; 25<br />
+<em>Distance to point is 90.25 turn left how much?</em><br />
+&gt; 180<br />
+<em>Go forward how much?</em><br />
+&gt; 50<br />
+<em>Distance to point is 47.38</em><br />
+&hellip;<br />
+</code></pre></p>
+</blockquote>
+<p>E finalmente:</p>
+<blockquote>
+<p><em>Distance to point is 12.08 you won in 11 moves!</em><br />
+</code></pre></p>
+</blockquote>
+<p>Il cuore del programma è una procedura chiamata <code>PLAY</code>. Questa prende come input un numero <code>M</code>, che indica il numero di mosse fino ad ora effettuate. <code>PLAY</code> controlla prima se il giocatore ha vinto. In tal caso, prima di uscire dal programma,viene stampato un messaggio che indica quante mosse sono fatte. Altrimenti il programma chiede al giocatore di fare un&rsquo;altra mossa, passando al turno successivo, con <code>M</code> aumentato di <code>1</code>:</p>
+<p>Abelson<strong><sup>(6)</sup></strong></p>
+<pre><code>TO PLAY :M
+TEST CHECKWIN?
+IFTRUE [(PRINT [YOU WON IN] :M [MOVES!])]
+IFTRUE [STOP]
+MAKEMOVE
+PLAY :M + 1
+END
+</code></pre>    
+<p>LibreLogo</p>
+<pre><code>TO PLAY :M
+IF CHECKWIN = TRUE ~
+[ (PRINT “YOU WON IN ” + STR(:M) + “ MOVES!”) STOP ] [ MAKEMOVE ]
+PLAY :M + 1
+END
+</code></pre>    
+<p>Snap!<strong><sup>(7)</sup></strong><br />
+<figure class="mw5">
+    <img src="/img/010_snap.png"/> 
+</figure>
+</p>
+<p>La procedura <code>PLAY</code> è semplice in sé perché delega i problemi di test per la vittorie alla procedura <code>CHECKWIN?</code> e di eseguire le mosse a <code>MAKEMOVE</code>.</p>
+<hr />
+<p class="note"><strong><sup>(6)</sup></strong> - LibreLogo non ha la primitiva Logo <code>TEST</code> che viene sostituita da <code>IF condizione
+[ lista istruzioni ] [lista istruzioni ]</code> che corrisponde alla primitiva Logo <code>IFELSE</code>;<br/>
+- LibreLogo non tratta le liste come in Logo;<br/>
+- Librelogo non vuole il carattere `?` nella definizione di una procedura.</p>
+<p class="note"><strong><sup>(7)</sup></strong> Snap! non ha i blocchi <code>TEST</code> e <code>PRINT</code> che sono sostituiti dai blocchi <code>if</code> e <code>say</code>.</p>
+<hr />
+<p><code>MAKEMOVE</code> invita l&rsquo;utente a inserire angoli e distanze e muove la tartaruga di conseguenza. Utilizza la sottoprocedura <code>READNUMBER</code>, che restituisce un numero digitato sulla tastiera:</p>
+<p>Abelson</p>
+<pre><code>TO MAKEMOVE
+PRINT [TURN LEFT HOW MUCH?]
+LEFT READNUMBER
+PRINT [GO FORWARD HOW MUCH?]
+FORWARD READNUMBER
+END
+</code></pre>    
+<p>LibreLogo<strong><sup>(8)</sup></strong></p>
+<pre><code>TO MAKEMOVE
+PRINT “TURN LEFT HOW MUCH?”
+READNUMBER LEFT :TYPEIN
+PRINT “GO FORWARD HOW MUCH?”
+READNUMBER FORWARD :TYPEIN
+END
+</code></pre>    
+<p>Snap!<br />
+<figure class="mw5">
+    <img src="/img/011_snap.png"/> 
+</figure>
+</p>
+<hr />
+<p class="note"><strong><sup>(8)</sup></strong> <code>READNUMBER</code> in LibreLogo non permette di passare con <code>OUTPUT</code> un numero a <code>LEFT</code> o <code>FORWARD</code>, mentre dà questa possibilità a comandi come <code>PRINT</code>. Ho risolto passando il numero con la variabile globale <code>:TYPEIN</code> di <code>READNUMBER</code>.
+Nella procedura <code>MAKEMOVE</code>, <code>READNUBER</code> (vedi la procedura LibreLogo di seguito) serve solo a verificare che ciò che si digita da tastiera sia un numero.</p>
+<hr />
+<p>Per controllare la vittoria, il programma deve verificare se la posizione della tartaruga è vicina a un punto predeterminato (ad esempio, 20 passi). Le primitive Logo <code>XCOR</code> e <code>YCOR</code> restituiscono le coordinate x e y della tartaruga. Supponiamo che le coordinate x e y del punto nascosto siano date dalle variabili <code>XPT</code> e <code>YPT</code>. Se si assume che ci sia una procedura <code>DISTANCE</code> che restituisce la distanza tra due punti, la procedura <code>CHECKWIN?</code> può essere scritta come segue:</p>
+<p>Abelson</p>
+<pre><code>TO CHECKWIN?
+MAKE "D DISTANCE :XCOR :YCOR :XPT :YPT
+(PRINT [DISTANCE TO POINT IS] :D)
+IF :D < 20 [OUTPUT "TRUE]
+OUTPUT "FALSE
+END
+</code></pre>    
+<p>LibreLogo<strong><sup>(9)</sup></strong></p>
+<pre><code>TO CHECKWIN
+:XCOR = POS[0] - :XHOME
+:YCOR =-(POS[1] - :YHOME)
+(PRINT "DISTANCE TO POINT IS" + STR(:D))
+:D = DISTANCE :XCOR :YCOR :XPT :YPT|
+IF :D < 20 [ OUTPUT TRUE ]
+OUTPUT FALSE
+END
+</code></pre>    
+<p>Snap!<br />
+<figure class="mw6">
+    <img src="/img/012_snap.png"/> 
+</figure>
+</p>
+<hr />
+<p class="note"><strong><sup>(9)</sup></strong> Mancano in LibreLogo le primitive <code>XCOR</code> e <code>YCOR</code> quindi per calcolare la distanza occorre utilizzare <code>POSITION</code> che non ha il riferimento cartesiano usuale <code>HOME=[0,0]</code>. Si possono ottenere le coordinate di <code>HOME</code> in LibreLogo assegnandole come variabili globali nella procedura <code>GAME</code> in questo modo <code>:XHOME=POS[0]</code> e <code>:YHOME=POS[1]</code>.</p>
+<hr />
+<p><code>CHECKWIN?</code> restituisce come valore <code>TRUE</code> o <code>FALSE</code>, valore che viene verificato da <code>PLAY</code> per determinare se il gioco è finito. Osservare anche l&rsquo;uso del comando <code>MAKE</code> per assegnare valori alle variabili. In questo caso, la variabile <code>D</code> viene utilizzata per indicare la distanza.</p>
+<p>Ecco la procedura per calcolare la distanza tra due punti, come radice quadrata della somma dei quadrati delle differenze delle coordinate:</p>
+<p>Abelson</p>
+<pre><code>TO DISTANCE :A :B :X :Y
+MAKE "DX :A - :X
+MAKE "DY :B - :Y
+OUTPUT SQRT (:DX*:DX + :DY*:DY)
+END
+</code></pre>    
+<p>LibreLogo</p>
+<pre><code>TO DISTANCE :A :B :X :Y
+:DX = :A - :X
+:DY = :B - :Y
+OUTPUT SQRT (:DX*:DX + :DY*:DY)
+END
+</code></pre>    
+<p>Snap!<br />
+<figure class="mw6">
+    <img src="/img/013_snap.png"/> 
+</figure>
+</p>
+<p>Ora è necessaria una procedura per iniziare il gioco:</p>
+<p>Abelson</p>
+<pre><code>TO GAME
+CLEARSCREEN
+MAKE "XPT RANDOMCOORD
+MAKE "YPT RANDOMCOORD
+PLAY 0
+END
+</code></pre>    
+<p>LibreLogo<strong><sup>(10)</sup></strong></p>
+<pre><code>TO GAME
+GLOBAL :XHOME,:YHOME,:XPT,:YPT
+CLEARSCREEN HOME
+:XHOME = POSITION[0]
+:YHOME = POSITION[1]
+:XPT = RANDOMCOORD
+:YPT = RANDOMCOORD
+PLAY 0
+END
+</code></pre>    
+<p>Snap!<strong><sup>(11)</sup></strong><br />
+<figure class="mw5">
+    <img src="/img/014_snap.png"/> 
+</figure>
+</p>
+<p>La procedura <code>GAME</code> azzera lo schermo, assegna valori (scelti a caso) alle coordinate del punto misterioso <code>XPT</code> e <code>YPT</code>, e chiama <code>PLAY</code> con una <code>M</code> iniziale pari a zero.</p>
+<hr />
+<p class="note"><strong><sup>(10)</sup></strong> In LibreLogo occorre dichiarare globali le variabili <code>:XPT</code>, <code>:YPT</code>, <code>:XHOME</code> e <code>:YHOME</code> per renderle visibili all'esterno della procedura. In Logo le variabili dichiarate con <code>MAKE</code> sono globali.</p>
+<p class="note"><strong><sup>(11)</sup></strong> - Anche in Snap! occorre dichiarare globali le variabili <code>XPT</code> e <code>YPT</code>;<br/>
+ - Il blocco <code>inizializza</code> è utilizzato per orientare la tartaruga a 0°, riportandola al centro dello schermo pulendo lo schermo.</p>
+<hr />
+<p>La seguente procedura, utilizzata per selezionare le coordinate casuali, restituisce un numero casuale compreso tra <code>-75</code> e <code>+75</code>. Funziona chiamando la primitiva Logo <code>RANDOM</code> per ottenere un numero casuale compreso tra <code>0</code> e <code>150</code> e sottraendo <code>75</code> dal risultato:</p>
+<p>Abelson</p>
+<pre><code>TO RANDOMCOORD
+OUTPUT (RANDOM 150) - 75
+END
+</code></pre>    
+<p>LibreLogo</p>
+<pre><code>TO RANDOMCOORD
+OUTPUT (RANDOM 150) - 75
+END
+</code></pre>    
+<p>Snap!<br />
+<figure class="mw5">
+    <img src="/img/015_snap.png"/> 
+</figure>
+</p>
+<p>L&rsquo;unica cosa necessaria per completare il programma è <code>READNUMBER</code>, che restituisce un numero da input dalla tastiera:</p>
+<p>Abelson</p>
+<pre><code>TO READNUMBER
+MAKE "TYPEIN FIRST READLIST
+IF NUMBER? :TYPEIN [OUTPUT :TYPEIN]
+PRINT [PLEASE TYPE A NUMBER]
+OUTPUT READNUMBER
+END
+</code></pre>    
+<p>LibreLogo<strong><sup>(13)</sup></strong></p>
+<pre><code>TO READNUMBER
+GLOBAL :TYPEIN
+:TYPEIN = INPUT “TYPE A NUMBER”
+IF FINDALL(“[0-9]|\.|-”, :TYPEIN) [ :TYPEIN = FLOAT(:TYPEIN) ]~
+[ PRINT “PLEASE TYPE A NUMBER” OUTPUT READNUMBER ]
+END
+</code></pre>    
+<p>Snap!<br />
+<figure class="mw5">
+    <img src="/img/016_snap.png"/> 
+</figure>
+</p>
+<hr />
+<p class="note"><strong><sup>(13)</sup></strong> In LibreLogo manca la primitiva <code>NUMBER?</code>, occorre quindi utilizzare <code>FINDALL</code> con le espressioni regolari. In <code>READNUMBER</code> la condizione è vera se si digitano cifre, il carattere "." e il carattere "-". In questo caso dato che <code>INPUT</code> considera solo stringhe di testo occorre trasformare la stringa di testo in numero con <code>FLOAT</code> prima di inviarlo alla procedura che lo richiede. Se la condizione è falsa verrà stampato un messaggio che chiede di digitare un numero e sarà richiamata la stessa procedura.</p>
+<hr />
+<p>Si osservi l&rsquo;ultima riga della procedura. Il suo effetto è quello di far ripetere, tutte le volte che è necessario <code>READNUMBER</code> fino a che non viene digitato un numero.</p>
+<p>Questo fa sì che il gioco si comporti come segue:</p>
+<blockquote>
+<p><em>GO FORWARD HOW MUCH?</em><br />
+&gt; FJKSL<br />
+<em>PLEASE TYPE A NUMBER</em><br />
+&gt; FIFTY<br />
+<em>PLEASE TYPE A NUMBER</em><br />
+50<br />
+&hellip;</p>
+</blockquote>
+<h2 id="liste">Liste</h2>
+<p>Abbiamo visto che la struttura procedurale di Logo lo rende un linguaggio facile e adatto per scrivere programmi. La maggior parte dei linguaggi di programmazione moderni sono, infatti, organizzati proceduralmente, anche se pochi linguaggi rendono così facile definire e modificare le procedure in modo interattivo come fa Logo.</p>
+<p>Un aspetto interessante Logo è il modo in cui gestisce le raccolte di dati. Questo viene fatto utilizzando le liste. Una lista è una sequenza di dati. Ad esempio:</p>
+<p><code>[1 2 BUCKLE MY SHOE]</code> è un elenco di cinque elementi. Gli elementi di una lista possono essere essi stessi liste, come in:</p>
+<p><code>[[PETER PAN ] WENDY JOHN]</code> che è una lista di tre elementi, il primo dei quali è a sua volta una lista di due elementi. Allo stesso modo, possiamo avere liste i cui elementi sono liste, e così via. Le liste, quindi, sono un modo naturale di rappresentare le <em>strutture gerarchiche</em>, cioè le strutture composte da parti che a loro volta sono composte da parti.</p>
+<p>Logo include una serie di operazioni per la manipolazione delle liste. <code>FIRST</code> estrae il primo elemento della lista. In questo esempio:</p>
+<p><code>FIRST [1 2 BUCKLE MY SHOE]</code> è <code>1</code>, nel prossimo esempio:</p>
+<p><code>FIRST [[PETER PAN) WENDY JOHN]</code> è <code>[PETER PAN]</code>.</p>
+<p>L&rsquo;operazione <code>BUTFIRST</code> restituisce la lista composta da tutte gli elementi tranne il primo, quindi in</p>
+<p><code>BUTFIRST [1 2 BUCKLE MY SHOE]</code> riporta <code>[2 BUCKLE MY SHOE]</code>, mentre in</p>
+<p><code>BUTFIRST [[PETER PAN] WENDY JOHN]</code> riporta <code>[WENDY JOHN]</code>.</p>
+<p>L&rsquo;operazione <code>FPUT</code> prende i due oggetti x e y e crea una lista il cui <code>FIRST</code> è x e in cui <code>BUTFIRST</code> è y. Ad esempio:</p>
+<p><code>FPUT 5 [2 BUCKLE MY SHOE]</code> produce la lista <code>[5 2 BUCKLE MY SHOE]</code>, e</p>
+<p><code>FPUT [PETER PAN] [BUCKLE MY SHOE)</code> produce la lista <code>[[PETER PAN] BUCKLE MY SHOE]</code>.</p>
+<p>L&rsquo;operazione <code>SENTENCE</code>, come <code>FPUT</code>, costruisce liste più grandi da liste più piccole, ma in modo leggermente diverso. <code>SENTENCE</code> prende come input più liste e combina tutti i loro elementi per produrre un&rsquo;unica lista. Ad esempio:</p>
+<p><code>SENTENCE [PETER PAN] [BUCKLE MY SHOE]</code> produce la lista <code>[PETER PAN BUCKLE MY SHOE]</code>.</p>
+<p>La cosa importante delle liste in Logo è che possono essere manipolate come ciò che gli informatici chiamano &ldquo;dati di prima classe&rdquo;. Cioè, le liste Logo (in contrapposizione, ad esempio, agli array in BASIC) possono essere:</p>
+<ul>
+<li>assegnate come valore alle variabili</li>
+<li>passate come input alle procedure</li>
+<li>restituite come output delle procedure</li>
+</ul>
+<p>Ad esempio, si possono assegnare nomi di variabili alle liste:</p>
+<p><code>MAKE &quot;X [OOM PAH] MAKE &quot;Y [NEIGH HO]</code> e quindi fare riferimento ai valori di queste variabili, in modo che il risultato di <code>BUTFIRST :X</code> sia la lista <code>[PAH]</code>. È anche possibile combinare operazioni sulle liste per produrre operazioni più complesse. Ad esempio:</p>
+<p><code>FIRST FIRST [[PETER PAN] WENDY JOHN]</code> riporta la parola <code>PETER</code>.</p>
+<p>Si possono anche scrivere procedure che manipolano le liste:</p>
+<pre><code>TO DOUBLE :L
+OUTPUT SENTENCE :L :L
+END
+</code></pre>
+<blockquote>
+<p>PRINT DOUBLE [OOM PAH]<br />
+&gt; <em>OOM PAH OOM PAH</em><br />
+PRINT DOUBLE DOUBLE [OOM PAH]<br />
+&gt; <em>OOM PAH OOM PAH OOM PAH OOM PAH</em></p>
+</blockquote>
+<p>Ne consegue che è possibile combinare operazioni su liste, così come si fanno le operazioni su numeri nei linguaggi ordinari. Per esempio, un&rsquo;operazione molto utile della lista è <code>PICKRANDOM</code>, che sceglie un elemento a caso da una lista di elementi. <code>PICKRANDOM</code> non è una primitiva, ma è facilmente costruibile con operazioni più semplici, come ad esempio trovare la lunghezza di una lista, selezionare un numero casuale in un dato intervallo, ed estrarre  un elemento a caso della lista.</p>
+<h2 id="giocare-con-i-testi">Giocare con i testi</h2>
+<p>Per illustrare come vengono utilizzate le liste, esaminiamo un programma che scrive cartoline per le vacanze, come ad esempio:</p>
+<blockquote>
+<p>DEAR DOROTHY<br />
+WISH YOU WERE HERE.<br />
+LOVE &ndash; JOHN</p>
+<p>DEAR MARY<br />
+EVERYONE' S FINE.<br />
+WRITE SOON &ndash; AUNT EM</p>
+</blockquote>
+<p>Si inizia con la creazione di liste di nomi e frasi tra cui gli elementi della cartolina saranno scelti:</p>
+<p>Abelson</p>
+<pre><code>MAKE "NAMES [JOHN DOROTHY [AUNT EM] OCCUPANT]
+MAKE "PHRASES [[WISH YOU WERE HERE.] [WEATHER'S GREAT!] [SURF'S UP.] [EVERYONE'S FINE.]]
+MAKE "CLOSINGS [LOVE [SEE YOU SOON] [WRITE SOON]]
+</code></pre>    
+<p>LibreLogo</p>
+<pre><code>GLOBAL :NAMES, :PHRASES, :CLOSINGS
+:NAMES = [“JOHN”, “DOROTY”, “AUNT EM”,“OCCUPANT”]
+:PHRASES =[“WISH YOU WERE HERE.”, “WEATHER'S GREAT!”,“SURF'S UP.”, “EVERYONE'S FINE.”]
+:CLOSINGS =[“LOVE”,“SEE YOU SOON”, “WRITE SOON”]
+</code></pre>    
+<p>Snap!<br />
+<figure class="mw6">
+    <img src="/img/017_snap.png"/> 
+</figure>
+</p>
+<p>Ecco il programma principale delle cartoline:</p>
+<p>Abelson</p>
+<pre><code>TO POSTCARD
+PRINT SENTENCE [ DEAR] NAME
+PRINT BODY
+PRINT (SENTENCE CLOSING [--] NAME)
+POSTCARD
+END
+</code></pre>    
+<p>LibreLogo</p>
+<pre><code>TO POSTCARD
+PRINT (“DEAR ” + NAME + ‘\n’ +BODY + ‘\n’+ CLOSING + “ -- ” + NAME)
+POSTCARD
+END
+</code></pre>    
+<p>Snap!<br />
+<figure class="mw6">
+    <img src="/img/018_snap.png"/> 
+</figure>
+</p>
+<p>La chiamata ricorsiva nell&rsquo;ultima riga fa sì che la procedura continui a stampare nuove cartoline più e più volte (confrontare le procedure <code>SQ</code> e <code>POLY</code>).</p>
+<p>Le procedure <code>NAME</code>, <code>BODY</code> e <code>CLOSING</code> generano gli elementi della cartolina selezionandoli dalle liste appropriate:</p>
+<p>Abelson<strong><sup>(14)</sup></strong></p>
+<pre><code>TO NAME
+OUTPUT PICK :NAMES
+END
+
+TO BODY
+OUTPUT PICK :PHRASES
+END
+
+TO CLOSING
+OUTPUT PICK :CLOSINGS
+END
+</code></pre>    
+<p>LibreLogo</p>
+<pre><code>TO NAME
+OUTPUT RANDOM :NAMES
+END
+
+TO BODY
+OUTPUT RANDOM :PHRASES
+END
+
+TO CLOSING
+OUTPUT RANDOM :CLOSINGS
+END
+</code></pre>    
+<p>Snap!<br />
+<figure class="mw6">
+    <img src="/img/019_snap.png"/> 
+</figure>
+</p>
+<hr />
+<p class="note"><strong><sup>(14)</sup></strong> Sia UcbLogo che LibreLogo hanno primitive che permettono di estrarre a caso un elemento da una lista (rispettivamente <code>PICK</code> e <code>RANDOM</code>), in Snap! bisogna costruirla, nominandola <code>PICKRANDOM</code>.</p>
+<hr />
+<p>È possibile modificare il programma <code>POSTCARD</code> in modo che aumenti automaticamente il suo repertorio di frasi di tanto in tanto (ad esempio, una possibilità su tre) chiedendo all&rsquo;utente di digitare una nuova frase e aggiungendola a <code>PHRASES</code>. Per farlo, aggiungere alla procedura <code>POSTCARD</code> la linea: <code>IF 1.IN.3 LEARN.NEW.PHRASE</code>.</p>
+<pre><code>TO POSTCARD
+IF 1.IN.3 [LEARN.NEW.PHRASE]
+PRINT SENTENCE [ DEAR] NAME  
+PRINT BODY
+PRINT (SENTENCE CLOSING [--] NAME)        
+POSTCARD  
+END
+</code></pre>
+<p>La procedura <code>1.IN.3</code> restituisce <code>VERO</code> con probabilità uno su tre e <code>FALSO</code> in caso contrario. Uno dei modi possibili per scrivere questa procedura è:</p>
+<p>Abelson</p>
+<pre><code>TO 1.IN.3
+IF (RANDOM 3 ) = 0 [OUTPUT "TRUE]
+OUTPUT "FALSE
+END
+</code></pre>    
+<p>LibreLogo<strong><sup>(15)</sup></strong></p>
+<pre><code>TO UNO_IN_TRE
+IF ROUND(RANDOM 2) = 0 [ OUTPUT TRUE ] [ OUTPUT FALSE ]
+END
+</code></pre>    
+<p>Snap!<br />
+<figure class="mw5">
+    <img src="/img/020_snap.png"/> 
+</figure>
+</p>
+<hr />
+<p class="note"><strong><sup>(15)</sup></strong> LibreLogo non accetta nomi di procedura che inizino con numeri e che contengano al loro interno punti.</p>
+<hr />
+<p>Ecco come il programma impara una nuova frase:</p>
+<p>Abelson</p>
+<pre><code>TO LEARN.NEW.PHRASE
+PRINT [PLEASE TYPE IN A NEW PHRASE]
+MAKE "PHRASES FPUT READLIST :PHRASES
+END
+</code></pre>    
+<p>LibreLogo<strong><sup>(16)</sup></strong></p>
+<pre><code>TO LEARN_NEW_PHRASE
+GLOBAL :PHRASES
+:TYPEIN = INPUT ‘PLEASE TYPE IN A NEW PHRASE’
+:NEW_PHRASE = [:TYPEIN]
+:PHRASES = SET :NEW_PHRASE | SET :PHRASES
+END
+</code></pre>    
+<p>Snap!<br />
+<figure class="mw6">
+    <img src="/img/021_snap.png"/> 
+</figure>
+</p>
+<hr />
+<p class="note"><strong><sup>(16)</sup></strong> LibreLogo non ha una primitiva tipo <code>FPUT</code> per le liste. Ho utilizzato il comando <code>SET</code> che converte una lista in un insieme Python, usando poi l'unione ("|") fra due insiemi.</p>
+<hr />
+<p>L&rsquo;idea è che <code>REQUEST</code> (<code>READLIST</code> in Ucblogo) restituisca (come lista) la frase che l&rsquo;utente digita in risposta al messaggio . Questo viene aggiunto a <code>PHRASES</code> (per mezzo di <code>FPUT</code>), in modo che il programma sia in grado di utilizzare questa frase in cartoline future, come:</p>
+<blockquote>
+<p><em>PLEASE TYPE IN A NEW PHRASE</em><br />
+DON&rsquo;T FORGET TO FEED THE DOG.</p>
+<p><em>DEAR OCCUPANT</em><br />
+<em>DON&rsquo;T FORGET TO FEED THE DOG.</em><br />
+<em>LOVE &ndash; JOHN</em></p>
+</blockquote>
+<p>Un&rsquo;altra modifica che si può fare è generare cartoline più lunghe, in cui <code>BODY</code> è costituito da una o più frasi. Un modo per farlo è modificare la procedura BODY come segue:</p>
+<p>Abelson</p>
+<pre><code>TO BODY
+IF 1.IN.2 [OUTPUT SINGLE.PHRASE]
+OUTPUT SENTENCE BODY SINGLE.PHRASE
+END
+
+TO SINGLE.PHRASE
+OUTPUT PICK :PHRASES
+END
+</code></pre>    
+<p>LibreLogo</p>
+<pre><code>TO BODY
+IF UNO_IN_DUE [ OUTPUT SINGLE_PHRASE ] [ OUTPUT BODY + SINGLE_PHRASE ]
+END
+
+TO SINGLE_PHRASE
+OUTPUT RANDOM :PHRASE
+END
+</code></pre>    
+<p>Snap!<br />
+<figure class="mw6">
+    <img src="/img/022_snap.png"/> 
+</figure>
+</p>
+<p>La nuova procedura <code>BODY</code> usa la ricorsione in modo ambiguo. Ogni volta che si chiama <code>BODY</code>, una volta su due produrrà una singola frase, come prima (la procedura <code>1.IN.2</code> è analoga alla procedura <code>1.IN.3</code> vista precedentemente) e alternativamente genera ricorsivamente un nuovo <code>BODY</code> combinandolo (usando <code>SENTENCE</code>) con una singola frase. Il nuovo <code>BODY</code> (chiamato ricorsivamente) genererà una singola frase solo una volta su due. Altrimenti, chiamerà un terzo <code>BODY</code>. Il risultato generale è che la chiamata alla procedura <code>BODY</code> genererà una singola frase circa una volta su due, due frasi circa una volta su quattro, tre frasi circa una volta su otto e così via.</p>
+<p>Ecco il programma finale cartolina in azione:</p>
+<blockquote>
+<p><em>DEAR A AUNT EM</em><br />
+<em>SURF&rsquo;S UP. DON&rsquo;T FORGET TO FEED THE DOG.</em><br />
+<em>WRITE SOON &ndash; DOROTHY</em></p>
+<p><em>PLEASE TYPE IN A NEW PHRASE</em><br />
+GET THE MONEY IN SMALL BILLS.</p>
+<p><em>DEAR OCCUPANT</em><br />
+<em>WEATHER&rsquo;S GREAT. WISH YOU WERE HERE. GET THE MONEY IN SMALL BILLS.</em><br />
+<em>SEE YOU SOON &ndash; JOHN</em></p>
+</blockquote>
+<p>Le procedure che generano testi sono divertenti da scrivere e con cui giocare e anche facili da modificare. Si possono rendere elaborate o semplici applicando le stesse idee  per la produzione di saggi, poesie, lettere d&rsquo;amore, e così via. L&rsquo;idea di generare un programma di cartoline casuali si basa sul lavoro svolto al MIT da Neil Rowe, il cui l&rsquo;articolo &ldquo;Grammar as a Programming Language&rdquo; (<em>Creative Computing</em>, gennaio/febbraio 1978) contiene molti altri esempi di procedure per la generazione di testi. Esso mostra anche come implementare, in Logo, uno speciale &ldquo;sottolinguaggio&rdquo; per la creazione di tali programmi.</p>
+<h2 id="pavimentazioni-ricorsive">Pavimentazioni ricorsive</h2>
+<p>Il successo del Logo come catalizzatore per l&rsquo;apprendimento coinvolge molto di più del linguaggio stesso, anche se il linguaggio gioca un ruolo fondamentale. La migliore attività Logo è una sintesi di programmazione, matematica, estetica e, soprattutto, l&rsquo;opportunità di esplorare. Un esempio particolarmente significativo è il programma di &ldquo;pavimentazione ricorsiva&rdquo; ideato da Andrea diSessa e Doug Hill. Questo schema permette di scrivere semplici procedure che disegnano modelli come quelli mostrati nelle foto 2 e 3, dando letteralmente miliardi di possibilità da esaminare ed esplorare.</p>
+<figure>
+  <img src="/img/006_foto2.png" alt="Foto 2a e 2b">
+  <figcaption>Foto 2a e 2b : Due motivi di pavimentazione costruiti con la stessa figura di base (un triangolo all'interno di un quadrato). Le differenze nei modelli sono dovute a orientamenti diversi quando la figura di base viene combinata con modelli "di livello superiore".</figcaption>
+</figure> 
+<p>L&rsquo;idea è la seguente. Si supponga di avere un programma che disegna un modello all&rsquo;interno di un quadrato di una certa dimensione. Riducendo a metà la dimensione del modello e incollandone quattro copie, si ottiene un modello più complesso in un quadrato della dimensione originale, come mostrato nella Figura 5a. Infatti, è possibile generare molti modelli diversi da un unico modello, perché ogni copia del modello originale che si inserisce in ogni angolo del quadrato può essere ruotata attraverso un multiplo arbitrario di 90 gradi, come mostrato in figura 5b.</p>
+<figure>
+  <img src="/img/007_figura5.png" alt="Figura 5">
+  <figcaption>Figura 5: Dato un disegno che si trova all'interno di un quadrato, quattro copie dello stesso disegno (ciascuno in scala dimezzata rispetto all'originale) produrrà un modello più complesso nello stesso quadrato. Variando gli orientamenti relativi delle quattro copie si ottengono disegni generali diversi. Questo è lo schema base per produrre i modelli nelle foto 2a, 2b, 3a, e 3b, partendo da un triangolo, e ripetendo il processo di incollaggio quattro volte (cioè lavorando con un elemento finale del modello in scala 1/16 della dimensione del quadrato originale).</figcaption>
+</figure> 
+<p>Per convertire questa idea in un programma per computer, si supponga di avere una procedura chiamata <code>PROC</code> che disegna un modello in un quadrato. Si supponga che <code>PROC</code> prenda un input <code>S</code> che specifichi la dimensione del quadrato, scalato in modo che <code>S</code> sia uguale alla metà della diagonale del quadrato. Si supponga inoltre che <code>PROC</code> sia concepita per iniziare a disegnare con la tartaruga al centro del quadrato che punta verso un vertice e per terminare con la tartaruga nello stesso stato.</p>
+<p>Ora si supponga di avere un quadrato di dimensione S diviso in quattro &ldquo;quadrati d&rsquo;angolo&rdquo; ciascuno di dimensione <code>S/2</code>. Il seguente processo è progettato per iniziare con la tartaruga al centro del quadrato, di fronte a uno degli angoli. Disegna una copia del disegno <code>PROC</code> in quell&rsquo;angolo quadrato e riporta la tartaruga al centro del quadrato più grande. Poi gira la tartaruga di 90 gradi per puntare al prossimo quadrato d&rsquo;angolo. Le fasi del processo sono le seguenti:</p>
+<ol>
+<li>Spostare la tartaruga in avanti di una distanza pari a <code>S/2</code>. Questo porta la tartaruga al centro del quadratino, puntando verso un vertice di quel quadratino.</li>
+<li>Eseguire la procedura <code>PROC</code> con un ingresso <code>S/2</code> (metà della diagonale del quadrato più piccolo). Questo disegna il modello e lascia la tartaruga al centro del quadrato più piccolo.</li>
+<li>Spostare la tartaruga <code>INDIETRO</code> di una distanza pari a <code>S/2</code> per riportarla al centro del quadrato più grande.</li>
+<li>Ruotare la tartaruga di 90 gradi.</li>
+</ol>
+<p>Inoltre, prima di eseguire la fase 2, è possibile ruotare il modello di un multiplo di 90 gradi. Se si esegue questa operazione, è necessario eseguire la rotazione opposta alla fine del passaggio 2, in modo che la tartaruga finisca per essere rivolta nella stessa direzione da cui è partita.</p>
+<p>La procedura <code>CORNER</code> attua tale strategia. <code>CORNER</code> ha tre input. Il primo, <code>A</code>, è un multiplo di 90 gradi da ruotare prima di disegnare il modello (<code>A</code> è un numero intero da 0 a 3). L&rsquo;ingresso successivo, <code>PROC</code>, è il nome della procedura che disegna il modello. Si presume che <code>PROC</code> abbia un ingresso che specifica la dimensione del modello. Il terzo ingresso di <code>CORNER</code> è un numero <code>S</code> che specifica la dimensione del quadrato. La procedura viene descritta di seguito:</p>
+<p>Abelson</p>
+<pre><code>TO CORNER :A :PROC :S
+FORWARD :S/2
+RIGHT 90 * :A
+DRAWFIGURE :PROC :S/2
+LEFT 90 * :A
+BACK :S/2
+RIGHT 90
+END
+</code></pre>    
+<p>LibreLogo<strong><sup>(17)</sup></strong></p>
+<p>Snap!<strong><sup>(18)</sup></strong><br />
+<figure class="mw6">
+    <img src="/img/023_snap.png"/> 
+</figure>
+</p>
+<hr />
+<p class="note"><strong><sup>(17)</sup></strong> Non sono riuscito a implementare in LibreLogo la procedura <code>DRAWFIGURE</code>.</p>
+<p class="note"><strong><sup>(18)</sup></strong> <figure class="mw5">
+    <img src="/img/024_snap.png"/> 
+</figure>
+</p>
+<p class="note">Comando che in Snap! sostituisce la procedura <code>DRAWFIGURE</code>.</p>
+<hr />
+<p>La procedura <code>CORNER</code> utilizza la sottoprocedura <code>DRAWFIGURE</code>, che prende come input il nome di una procedura e un numero ed esegue la procedura con il numero come input. <code>DRAWFIGURE</code> è implementato attraverso la primitiva Logo <code>RUN</code>, che esegue una lista come se si digitasse riga di comando:</p>
+<pre><code>TO DRAWFIGURE :PROC :INPUT
+RUN SENTENCE :PROC :INPUT
+END
+</code></pre>
+<p>Per esempio, se si esegue: <code>DRAWFIGURE [SQUARE] 100</code> combina <code>[SQUARE]</code> e <code>100</code> con <code>SENTENCE</code> per ottenere la lista <code>[SQUARE 100]</code> ed esegue questa lista come se fosse una riga di comando Logo, cioè esegue il comando <code>SQUARE 100</code><strong><sup>(19)</sup></strong>.</p>
+<p>La procedura <code>CORNER</code> inizia con la tartaruga che punta ad un angolo del quadrato più grande e termina con la tartaruga che punta all&rsquo;angolo successivo. Ciò significa che è possibile ottenere un disegno completo di incollaggio eseguendo <code>CORNER</code> quattro volte. Ognuna delle quattro chiamate a <code>CORNER</code> può specificare un diverso multiplo di 90 gradi di <code>A</code>, attraverso il quale il disegno in quell&rsquo;angolo deve essere ruotato. Dal momento che ogni incollaggio ha quattro angoli e ogni angolo può avere una qualsiasi delle quattro rotazioni, ci sono 4<sup>4</sup> o 256 incollaggi possibili per ogni modello dato. Qui ci sono due possibili incollaggi:</p>
+<hr />
+<p class="note"><strong><sup>(19)</sup></strong> LibreLogo non ha la primitiva <code>RUN</code> che permette di eseguire una procedura all'interno di un'altra il cui nome è dato come input.</p>
+<hr />
+<p>Abelson</p>
+<pre><code>TO GLUE1 :PROC :S
+REPEAT 4[CORNER 0 :PROC :S]
+END
+
+TO GLUE2 :PROC :S
+CORNER 0 :PROC :S
+CORNER 2 :PROC :S
+CORNER 1 :PROC :S
+CORNER 3 :PROC :S
+END
+</code></pre>    
+<p>Snap!<br />
+<figure class="mw5">
+    <img src="/img/025_snap.png"/> 
+</figure>
+</p>
+<p>La foto 4b mostra il risultato dell&rsquo;inserimento di <code>GLUE [TRI] 100</code><strong><sup>(20)</sup></strong> in Logo e di <figure class="mw5">
+    <img src="/img/026_snap.png"/> 
+</figure>
+ in Snap!</p>
+<hr />
+<p class="note"><strong><sup>(20)</sup></strong> Il valore di input è metà della diagonale del quadrato che contiene i quattro modelli.</p>
+<hr />
+<figure>
+  <img src="/img/008_foto4.png" alt="Foto 4">
+  <figcaption>Foto 4: La foto 4a mostra un triangolo all'interno di un quadrato, come disegnato dalla procedura <code>TRI</code>. Le foto 4b e 4c mostrano due diversi tipi di incollaggio  della procedura <code>TRI</code> per formare una figura più complicata all'interno di un quadrato. I disegni complessi nelle foto 2a, 2b, 3a e 3b sono quattro livelli di incollaggio basati sulla stessa figura <code>TRI</code>.</figcaption>
+</figure> 
+<p><code>TRI</code> è una procedura che disegna un piccolo triangolo all&rsquo;interno di un quadrato, come mostrato nella foto 4a. (In conformità con la strategia generale di incollaggio, <code>TRI</code> dovrebbe essere una procedura che richiede un input che specifica la dimensione del quadrato).</p>
+<p>Questa è una possibile procedura per <code>TRI</code><strong><sup>(21)</sup></strong>.</p>
+<p>Abelson</p>
+<pre><code>TO TRI :MEZZA_DIAG
+MAKE "MEZZA_BASE (:MEZZA_DIAG * SQRT 2)/2
+LT 45
+FD :MEZZA_BASE RT 135 FD :MEZZA_DIAG
+RT 90 FD :MEZZA_DIAG
+RT 135 FD :MEZZA_BASE
+RT 45
+END
+</code></pre>    
+<p>Snap!<br />
+<figure class="mw6">
+    <img src="/img/025a_snap.png"/> 
+</figure>
+</p>
+<hr />
+<p class="note"><strong><sup>(21)</sup></strong> La seguente procedura non è presente nell'articolo di Abelson.</p>
+<hr />
+<p>A titolo di confronto, la foto 4c mostra un incollaggio diverso: <code>GLUE2 [TRI] 100</code> in Logo e <figure class="mw5">
+    <img src="/img/027_snap.png"/> 
+</figure>
+ in Snap!</p>
+<p>Ora arriva l&rsquo;idea intelligente. Le procedure <code>GLUE</code> consentono di incollare insieme quattro copie di qualsiasi modello. D&rsquo;altra parte, inserendo <code>GLUE1</code> <code>[TRI]</code> <code>100</code> è <em>anche</em> un comando che disegna uno schema in un quadrato. Infatti, la lista <code>[GLUE</code> <code>1</code> <code>[TRI]]</code>, quando combinata con una dimensione (tramite la procedura <code>DRAWFIGURE</code>), produce un comando che disegna un modello in un quadrato della dimensione specificata. Pertanto, è possibile utilizzare una procedura <code>GLUE</code> per incollare insieme, ad esempio, quattro di questi modelli:</p>
+<p><code>GLUE1 [GLUE1 [TRI]] 100</code> o <code>GLUE2</code> <code>[GLUE1 [TRI]] 100</code> in Logo e <figure class="mw5">
+    <img src="/img/028_snap.png"/> 
+</figure>
+ o <figure class="mw5">
+    <img src="/img/029_snap.png"/> 
+</figure>
+ in Snap!</p>
+<p>Ma ancora una volta, ognuno di questi incollaggi &ldquo;a due livelli&rdquo; è di per sé qualcosa che può essere incollato, in modo da ottenere modelli a tre livelli, come ad esempio <code>GLUE2</code> <code>[GLUE1</code> <code>[GLUE2</code> <code>[TRI]]]</code> <code>100</code> e così via. I modelli riportati nelle foto 2a, 2b, 3a e 3b sono, infatti, basati tutti a quattro livelli di incollaggio sulla stessa procedura <code>TRI</code>, utilizzando rotazioni diverse nei vari livelli.</p>
+<figure>
+  <img src="/img/009_foto3.png" alt="Foto 3a e 3b">
+  <figcaption>Foto 3a e 3b : Due motivi di pavimentazione costruita sullo stesso triangolo di base delle foto 2a e 2b. Tutti e quattro i modelli utilizzano lo schema di incollaggio mostrato nelle figure 5a e 5b e nelle foto 4a, 4b e 4c, ci sono quattro livelli di incollaggio.</figcaption>
+</figure> 
+<p>Qui c&rsquo;è un&rsquo;enorme varietà di possibilità da indagare. Quattro livelli di incollaggio con 256 scelte di orientamento ad ogni livello danno 256<sup>4</sup> o più di 4 miliardi di possibili incollaggi a quattro livelli, tutti da un unico modello di base! (Il numero di modelli distinti è ridotto da varie simmetrie nel processo di incollaggio, che è di per sé un fenomeno interessante da esplorare). Per più varietà, è possibile provare diversi modelli di base, o anche sviluppare diversi schemi di incollaggio, come quello derivato dalla divisione di un triangolo equilatero in quattro triangoli più piccoli equilateri. (Per ulteriori informazioni sui &ldquo;disegni ricorsivi&rdquo;, vedere <em>Turtle Geometry</em>).</p>
+<h2 id="la-prospettiva-computazionale">La prospettiva computazionale</h2>
+<p>Il logo è spesso descritto come un linguaggio di programmazione. Quelli di noi che hanno progettato Logo tendono a pensarlo piuttosto come un ambiente di apprendimento computerizzato, dove le attività (esplorare la simmetria di <code>POLY</code>) sono integrate agli strumenti di programmazione utilizzati (ricorsività e liste). Logo è anche un ambiente in continua evoluzione e le implementazioni di microcomputer Logo che sono apparsi nel corso dell&rsquo;ultimo anno sono solo i primi ad essere ampiamente disponibili. Abbiamo in programma di estendere Logo per includere nuove caratteristiche linguistiche, come il &ldquo;messaggio che passa&rdquo; strutture che si trovano in Smalltalk e nelle recenti implementazioni di LISP (vedi il numero di agosto 1981 di BYTE per una panoramica di Smalltalk), così come nuove attività, come un programma di fisica basato sulla geometria delle tartarughe. Presso il Laboratorio di Informatica del MIT, il Gruppo Educational Computing sta progettando un sistema Logo adatto alla nuova generazione di personal computer che entrerà in uso nella seconda metà degli anni Ottanta.</p>
+<p>I prossimi anni saranno entusiasmanti per l&rsquo;informatica didattica, perché i personal computer stanno diventando abbastanza potenti da supportare sistemi progettati per la comodità delle persone piuttosto che per la comodità dei compilatori. Se riusciamo a sfatare l&rsquo;illusione che conoscere i computer dovrebbe essere un&rsquo;attività per manipolare indici array e per preoccuparci se X è un numero intero o un numero reale, allora possiamo iniziare a concentrarci sulla programmazione come fonte di idee. La programmazione è un&rsquo;attività di descrizione delle cose. Le descrizioni sono formulate in modo da poter essere interpretate da un computer, ma questo non è così importante. Le descrizioni computazionali, come quelle della scienza o della matematica, forniscono una prospettiva, una raccolta di &ldquo;strumenti del pensiero&rdquo;, come l&rsquo;organizzazione procedurale, la struttura gerarchica e le formulazioni ricorsive. Il Logo, e linguaggi simili, contribuiranno a rendere questi strumenti disponibili a tutti.</p>
+<h3 id="risorse">Risorse</h3>
+<p>L&rsquo;articolo <a href="/pdf/rileg_abel_pg.pdf">in formato pdf</a></p>
+<p>I programmi dell&rsquo;articolo <a href="/zip/examples.zip">nei linguaggi proposti</a></p>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/sjnecura.netlify.app/tags/linguaggio-logo" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Linguaggio Logo</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="sjnecura.netlify.app" >
+  Sjnecura  
+  </a>
+  <a rel="license" href="http://creativecommons.org/licenses/by/4.0/" title="Licenza Creative Commons Attribuzione"><img alt="Licenza Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
+    <div>
+
+
+
+
+
+
+
+
+<a href="https://github.com/karbonk" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/sjnecura.netlify.app/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

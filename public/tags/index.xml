@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Sjnecura</title>
+    <link>sjnecura.netlify.app/tags/</link>
+    <description>Recent content in Tags on Sjnecura</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 15 Oct 2020 10:46:55 +0200</lastBuildDate><atom:link href="sjnecura.netlify.app/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linguaggio Logo</title>
+      <link>sjnecura.netlify.app/tags/linguaggio-logo/</link>
+      <pubDate>Thu, 15 Oct 2020 10:46:55 +0200</pubDate>
+      
+      <guid>sjnecura.netlify.app/tags/linguaggio-logo/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
