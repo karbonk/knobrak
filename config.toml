@@ -1,5 +1,5 @@
 title = "Sjnecura"
-baseURL = "sjnecura.netlify.app"
+baseURL = ""
 languageCode = "en-us"
 theme = "ananke"
 # copyright = "CC-BY"
