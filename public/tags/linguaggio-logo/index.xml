@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linguaggio Logo on Sjnecura</title>
-    <link>sjnecura.netlify.app/tags/linguaggio-logo/</link>
+    <link>/tags/linguaggio-logo/</link>
     <description>Recent content in Linguaggio Logo on Sjnecura</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 15 Oct 2020 10:46:55 +0200</lastBuildDate><atom:link href="sjnecura.netlify.app/tags/linguaggio-logo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 15 Oct 2020 10:46:55 +0200</lastBuildDate><atom:link href="/tags/linguaggio-logo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Rileggendo Abelson</title>
-      <link>sjnecura.netlify.app/posts/rileggendo-abelson/</link>
+      <link>/posts/rileggendo-abelson/</link>
       <pubDate>Thu, 15 Oct 2020 10:46:55 +0200</pubDate>
       
-      <guid>sjnecura.netlify.app/posts/rileggendo-abelson/</guid>
+      <guid>/posts/rileggendo-abelson/</guid>
       <description>Nella rivista Byte dell’agosto 1982(1) Harold Abelson scriveva l’articolo “A Beginner’s Guide to Logo” che mostrava le potenzialità del linguaggio Logo come ambiente di apprendimento.
 Rileggendo l’articolo ho trovato stimolanti e significativi gli esempi che sviluppa Abelson e il presente lavoro cerca di riprodurli utilizzando alcune delle risorse libere che si hanno a disposizione a quasi 40 anni da quell’esperienza.
 Il linguaggio utilizzato nel documento per l&amp;rsquo;etichetta Abelson è Ucblogo perché considerato il più vicino all&amp;rsquo;implementazione usata da Abelson nel proporre i programmi.</description>
