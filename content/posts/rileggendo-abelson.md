@@ -2,8 +2,8 @@
 date: 2020-10-15T10:46:55+02:00
 title: "Rileggendo Abelson"
 featured_image: "/images/1982_08_BYTE_07-08_Logo_0000.jpg"
-tags: ["Linguaggio Logo"]
-draft: false
+tags: ["Linguaggio Logo", "Linux"]
+toc: true
 ---
 
 Nella rivista Byte dell’agosto 1982<strong><sup>(1)</sup></strong> Harold Abelson scriveva l’articolo “A Beginner’s Guide to Logo” che mostrava le potenzialità del linguaggio Logo come ambiente di apprendimento.

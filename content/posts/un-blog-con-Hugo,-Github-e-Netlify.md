@@ -2,7 +2,7 @@
 title: "Un blog con Hugo, Github e Netlify"
 date: 2020-10-05T18:12:37+01:00
 featured_image: "/images/hugo_github_netlify.png"
-draft: false
+toc: true
 ---
 
 [Hugo](http://gohugo.io/) è uno dei più popolari generatori di *siti statici* open-source ed è scritto in GO. È semplice, efficiente, facile da scalare e veloce da implementare. Basta installarlo, clonare i temi che ti piacciono da Github o dal sito ufficiale HUGO, apportare alcune modifiche al file di configurazione e distribuire, poi la pagina sarà online

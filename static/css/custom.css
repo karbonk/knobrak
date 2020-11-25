@@ -276,14 +276,14 @@ figcaption {
   margin: 0 0 .8em;
   text-align: left;
 }
-/*
+
 table {
   margin-bottom: 2em;
   border-bottom: 1px solid #ddd;
   border-right: 1px solid #ddd;
   border-spacing: 0;
   border-collapse: collapse;
-  /* Center 
+  /* Center */ 
   margin-left: auto;
   margin-right: auto;
 }
@@ -301,7 +301,7 @@ table td {
   border-left: 1px solid #ddd;
   vertical-align: top;
 }
-
+/*
 .author {
   font-size: 1.2em;
   text-align: center;
@@ -324,6 +324,7 @@ table td {
     font-size: 16px;
   }
 }
+ 
  @media print { 
   * {
     background: transparent !important;
@@ -332,7 +333,8 @@ table td {
     -ms-filter: none !important;
   }
 
-/* inserito per definire le pagine quando si stampa 
+/* inserito per definire le pagine quando si stampa */
+
 @media print {
      .new-page { 
       page-break-after: always;
@@ -343,7 +345,7 @@ table td {
     font-size: 12pt;
     max-width: 100%;
   }
-
+/*
   a, a:visited {
     text-decoration: underline;
   }

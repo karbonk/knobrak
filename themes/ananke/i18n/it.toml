@@ -5,13 +5,13 @@ other = "Altro"
 other = "Tutti {{.Title }}"
 
 [recentTitle]
-other = "Recenti {{.Title }}"
+other = "{{.Title }} recenti"
 
 [readMore]
 other = "leggi di più"
 
 [whatsInThis]
-other = "Cosa c'è in {{ .Type }}"
+other = "Indice"
 
 [related]
 other = "Correlati"
